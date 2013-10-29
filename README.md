@@ -5,7 +5,15 @@
 Here's a quick coffeescript/node app to do just that for you, lil' buddy.
 
 
-_note:_ Built in coffee script, but includes compiled js.
+_note:_ Built in coffee script, but includes compiled js. 
+
+
+###installation:
+```
+  $ git clone https://github.com/alvaromuir/ga_purdy.git
+  $ cd ga_purdy
+  $ npm install
+```
 
 
 __Example terminal usage:__
