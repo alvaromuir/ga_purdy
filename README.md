@@ -5,7 +5,7 @@
 Here's a quick coffeescript/node app to do just that for you, lil' buddy.
 
 
-_note:_ Built in coffee script, but includes compiled js. 
+_note:_ Built in coffee script, but includes compiled js.
 
 
 ###installation:
@@ -52,6 +52,9 @@ __both examples will return__
   ga('send', 'pageview');
 </script>
 ```
+
+
+--coffee and --jade outputs in coffee-script and jade formats, respectively
 
 
 ToDo:
