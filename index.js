@@ -6,6 +6,12 @@
 
   pretty = require('./lib/ga_pretty_tag');
 
+  if (argv.coffee && argv.jade) {
+    console.log('\n');
+    console.log("error: cannot combine --coffee with --jade");
+    return;
+  }
+
   pretty(argv, function(rslt) {
     return console.log(rslt);
   });

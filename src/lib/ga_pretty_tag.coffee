@@ -44,5 +44,18 @@ module.exports = (argv, cb) ->
   rslt += "  ga('send', 'pageview');\n"
   rslt += "</script>"
 
+  if argv.coffee 
+
+    rslt = rslt.replace '<script>\n', ''
+    rslt = rslt.replace '</script>', ''
+    rslt = rslt.replace(/(\r\n|\n|\r)/gm,"").replace(/\s+/g,' ')
+    rslt = require('js2coffee').build(rslt, indend: "    ")
+
+
+  if argv.jade
+
+    rslt =  rslt.replace '<script>\n', 'script.\n'
+    rslt = rslt.replace '</script>', ''
+
   cb rslt if cb
   rslt
