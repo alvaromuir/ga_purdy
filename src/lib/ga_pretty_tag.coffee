@@ -1,21 +1,27 @@
 # Main file.
-module.exports = (vars, googleId, website, cb) ->
+
+
+module.exports = (argv, cb) ->
+
+  args    = argv['_'] unless argv['_'].length is 1
+  args    = argv['_'][0].split('') if argv['_'].length is 1
+
   return "error - first argument must be an array" if not typeof args instanceof Array
 
-  for x, y in vars
-    vars[y] = 'var' + y if vars[y] is ''
+  for x, y in args
+    args[y] = 'var' + y if args[y] is ''
 
 
-  var1 = vars[0]
-  var2 = vars[1]
-  var3 = vars[2]
-  var4 = vars[3]
-  var5 = vars[4]
-  var6 = vars[5]
-  var7 = vars[6]
+  var1 = args[0]
+  var2 = args[1]
+  var3 = args[2]
+  var4 = args[3]
+  var5 = args[4]
+  var6 = args[5]
+  var7 = args[6]
 
-  id   = googleId || ''
-  site = website || ''
+  id   = argv.id || ''
+  site = argv.site || ''
 
   rslt =  "<script>\n"
   rslt += "  (function("+var1+","+var2+","+var3+","+var4+","+var5

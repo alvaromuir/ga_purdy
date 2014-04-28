@@ -1,13 +1,9 @@
 # Main file.
 
-argv    = require('optimist').argv
+argv    = require('minimist') process.argv.slice(2)
 pretty  = require './lib/ga_pretty_tag'
 
-id      = argv.id
-site    = argv.site
-  
-args    = argv['_'] unless argv['_'].length is 1
-args    = argv['_'][0].split('') if argv['_'].length is 1
+# console.log argv
 
-pretty args, id, site, (rslt) ->
+pretty argv, (rslt) ->
   console.log rslt
